@@ -2,7 +2,6 @@ import asyncio
 import datetime
 import json
 import os
-import schedule
 from discord.ext.commands import Bot
 from dotenv import load_dotenv
 
@@ -30,8 +29,9 @@ async def birthday_task():
             birthday_members = get_birthday_members(todays_date)
             if len(birthday_members) != 0:
                 birthday_message = create_birthday_message(birthday_members)
-                CHANNEL_ID = "XXXXXXX"
-                await bot.get_channel(CHANNEL_ID).send(birthday_message)
+                #CHANNEL_ID = "XXXXXXX"
+                #await bot.get_channel(CHANNEL_ID).send(birthday_message)
+                print(birthday_message)
 
         await asyncio.sleep(3600)
 
